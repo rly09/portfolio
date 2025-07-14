@@ -208,6 +208,8 @@ class _MainScreenState extends State<MainScreen> {
               controller: _scrollController,
               child: Column(
                 children: [
+                  const SizedBox(height: 20),
+                  IntroCards(onContactPressed: () => _scrollToSection(contactKey)),
                   SectionWrapper(key: homeKey, child: HomePage(selectedIndex: _selectedIndex, onTap: (_) {})),
                   SectionWrapper(key: aboutKey, child: AboutPage(selectedIndex: _selectedIndex, onTap: (_) {})),
                   SectionWrapper(key: educationKey, child: EducationPage(selectedIndex: _selectedIndex, onTap: (_) {})),

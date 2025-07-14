@@ -24,8 +24,6 @@ class HomePage extends StatelessWidget {
           ? Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          IntroCards(onContactPressed: () => onTap(5)),
-          const SizedBox(height: 24),
           const MainContent(),
         ],
       )

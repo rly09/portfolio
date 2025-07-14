@@ -11,9 +11,11 @@ class IntroCards extends StatelessWidget {
     required this.onContactPressed,
   });
 
-  final String linkedinUrl = "https://www.linkedin.com/in/roshan-lal-yogi-495569316/";
+  final String linkedinUrl =
+      "https://www.linkedin.com/in/roshan-lal-yogi-495569316/";
   final String githubUrl = "https://github.com/rly09";
-  final String resumeUrl = "https://drive.google.com/uc?export=download&id=1-qfIvV6U46vyYQGNaTfGNgvH2hN4m8cC";
+  final String resumeUrl =
+      "https://drive.google.com/uc?export=download&id=1-qfIvV6U46vyYQGNaTfGNgvH2hN4m8cC";
 
   Future<void> _launchURL(String url) async {
     final Uri uri = Uri.parse(url);
@@ -40,7 +42,8 @@ class IntroCards extends StatelessWidget {
               child: Container(
                 width: cardWidth,
                 margin: const EdgeInsets.all(16),
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   gradient: LinearGradient(
@@ -88,7 +91,8 @@ class IntroCards extends StatelessWidget {
                       child: SizedBox(
                         height: imageSize,
                         width: imageSize,
-                        child: Image.asset('assets/images/me.jpg', fit: BoxFit.cover),
+                        child: Image.asset('assets/images/me.jpg',
+                            fit: BoxFit.cover),
                       ),
                     ),
 
@@ -104,7 +108,7 @@ class IntroCards extends StatelessWidget {
                             "assets/icons/linkedin.png",
                             height: 28,
                             width: 28,
-                              color: const Color(0xFF00FFC6),
+                            color: const Color(0xFF00FFC6),
                           ),
                         ),
                         GestureDetector(
@@ -152,7 +156,8 @@ class IntroCards extends StatelessWidget {
                           ),
                         ),
                         onPressed: onContactPressed,
-                        icon: const Icon(Icons.mail, size: 24, color: Colors.black),
+                        icon: const Icon(Icons.mail,
+                            size: 24, color: Colors.black),
                         label: const Text(
                           "Contact Me",
                           style: TextStyle(fontWeight: FontWeight.bold),
@@ -176,15 +181,16 @@ class IntroCards extends StatelessWidget {
                           ),
                         ),
                         onPressed: () => _launchURL(resumeUrl),
-                        icon: const Icon(Icons.download, size: 20, color: Colors.greenAccent),
+                        icon: const Icon(Icons.download,
+                            size: 20, color: Colors.greenAccent),
                         label: Text(
                           "Resume",
                           style: GoogleFonts.exo2(
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFF00FFC6),
-                          )
+                          ),
+                        ),
                       ),
-                    ),
                     )
                   ],
                 ),
