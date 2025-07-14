@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../utils/section_header.dart';
 
@@ -25,7 +26,7 @@ class ProjectsContent extends StatelessWidget {
           const SizedBox(height: 16),
           RichText(
             text: TextSpan(
-              style: TextStyle(
+              style: GoogleFonts.exo2(
                 fontSize: isMobile ? 32 : 60,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
@@ -34,7 +35,7 @@ class ProjectsContent extends StatelessWidget {
                 TextSpan(text: 'Featured '),
                 TextSpan(
                   text: 'Projects',
-                  style: TextStyle(color: Color(0xFF00FF9F)),
+                  style: TextStyle(color: Color(0xFF00FFC6)), // Mint Neon
                 ),
               ],
             ),
@@ -47,7 +48,7 @@ class ProjectsContent extends StatelessWidget {
               ProjectCard(
                 imagePath: 'assets/icons/careerverse.png',
                 title: 'Career Verse',
-                tags: ['Flutter', 'Supabase'],
+                tags: ['Flutter', 'Supabase','Isar'],
                 projectUrl: 'https://career-navigation-app.vercel.app/',
               ),
               ProjectCard(
@@ -135,7 +136,7 @@ class ProjectCard extends StatelessWidget {
                   ),
                   child: Text(
                     tag,
-                    style: const TextStyle(
+                    style: GoogleFonts.inter(
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
                       fontSize: 12,
@@ -147,8 +148,8 @@ class ProjectCard extends StatelessWidget {
               const SizedBox(height: 10),
               Text(
                 title,
-                style: const TextStyle(
-                  fontSize: 18,
+                style: GoogleFonts.exo2(
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),

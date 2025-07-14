@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../utils/section_header.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ContactContent extends StatefulWidget {
   const ContactContent({super.key});
@@ -71,22 +72,39 @@ class _ContactContentState extends State<ContactContent> {
               iconPath: 'assets/icons/contact.png',
             ),
             const SizedBox(height: 16),
+
+            // Heading
             RichText(
-              text: const TextSpan(
-                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, color: Colors.white),
+              text: TextSpan(
+                style: GoogleFonts.exo2(
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
                 children: [
-                  TextSpan(text: "Let's Work "),
-                  TextSpan(text: 'Together', style: TextStyle(color: Color(0xFF00FF9F))),
+                  const TextSpan(text: "Let's Work "),
+                  TextSpan(
+                    text: 'Together',
+                    style: GoogleFonts.exo2(
+                      color: const Color(0xFF00FFC6),
+                    ),
+                  ),
                 ],
               ),
             ),
             const SizedBox(height: 10),
-            const Text(
+
+            // Email Text
+            Text(
               'mailmeh@whatever.com',
-              style: TextStyle(fontSize: 18, color: Colors.white70),
+              style: GoogleFonts.inter(
+                fontSize: 18,
+                color: Colors.white70,
+              ),
             ),
             const SizedBox(height: 30),
 
+            // Form Fields
             isMobile
                 ? Column(
               children: [
@@ -116,6 +134,8 @@ class _ContactContentState extends State<ContactContent> {
             ),
 
             const SizedBox(height: 30),
+
+            // Send Button
             Align(
               alignment: Alignment.centerRight,
               child: ElevatedButton.icon(
@@ -125,10 +145,15 @@ class _ContactContentState extends State<ContactContent> {
                   }
                 },
                 icon: const Icon(Icons.send_rounded, color: Colors.black),
-                label: const Text('SEND', style: TextStyle(fontWeight: FontWeight.bold)),
+                label: Text(
+                  'SEND',
+                  style: GoogleFonts.exo2(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.greenAccent,
-                  foregroundColor: Colors.black,
+                  backgroundColor: const Color(0xFF00FFC6),
                   padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 ),
@@ -162,18 +187,18 @@ class ContactField extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(label, style: const TextStyle(color: Colors.white70, fontSize: 16)),
+          Text(label, style: GoogleFonts.inter(color: Colors.white70, fontSize: 16)),
           const SizedBox(height: 6),
           TextFormField(
             controller: controller,
             maxLines: maxLines,
-            style: const TextStyle(color: Colors.white),
+            style: GoogleFonts.inter(color: Colors.white),
             validator: (value) => value == null || value.isEmpty ? 'Required field' : null,
             decoration: InputDecoration(
               hintText: hint,
-              hintStyle: const TextStyle(color: Colors.white54),
+              hintStyle: GoogleFonts.inter(color: Colors.white54),
               filled: true,
-              fillColor: Colors.grey[850],
+              fillColor: Colors.grey[900],
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide.none,

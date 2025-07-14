@@ -14,44 +14,27 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFF121212),
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          final isMobileOrTablet = constraints.maxWidth < 1100;
-          final isMobile = constraints.maxWidth < 700;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isMobileOrTablet = screenWidth < 1100;
+    final isMobile = screenWidth < 700;
 
-          // ✅ Mobile / Tablet Layout
-          if (isMobileOrTablet) {
-            return SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  // ✅ Show IntroCard only on mobile/tablet for HomePage
-                  IntroCards(onContactPressed: () => onTap(5)),
-                  const SizedBox(height: 24),
-                  const MainContent(),
-                ],
-              ),
-            );
-          }
-
-          // ✅ Desktop Layout
-          return Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // Left: Profile / Intro card
-              SizedBox(
-                width: 300,
-                child: IntroCards(onContactPressed: () => onTap(5)),
-              ),
-
-              // Right: Main content area
-              const Expanded(child: MainContent()),
-            ],
-          );
-        },
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+      child: isMobileOrTablet
+          ? Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          IntroCards(onContactPressed: () => onTap(5)),
+          const SizedBox(height: 24),
+          const MainContent(),
+        ],
+      )
+          : Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(width: 40),
+          const Expanded(child: MainContent()),
+        ],
       ),
     );
   }

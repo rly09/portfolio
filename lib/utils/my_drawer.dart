@@ -23,8 +23,7 @@ class MyDrawer extends StatelessWidget {
     ];
 
     final screenWidth = MediaQuery.of(context).size.width;
-    final drawerWidth = screenWidth < 600 ? (screenWidth * 0.95).toDouble() : 550.0;
-
+    final drawerWidth = screenWidth < 600 ? screenWidth * 0.95 : 550.0;
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(50),
@@ -61,31 +60,46 @@ class MyDrawer extends StatelessWidget {
                 onTap: () => onTap(index),
                 child: MouseRegion(
                   cursor: SystemMouseCursors.click,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
-                        height: 30,
-                        width: 30,
-                        child: Image.asset(
-                          icons[index],
-                          color: isSelected
-                              ? Colors.greenAccent
-                              : Colors.white70,
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 200),
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      boxShadow: isSelected
+                          ? [
+                        BoxShadow(
+                          color: Colors.greenAccent.withOpacity(0.6),
+                          blurRadius: 12,
+                          spreadRadius: 1,
                         ),
-                      ),
-                      const SizedBox(height: 4),
-                      AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
-                        width: isSelected ? 6 : 0,
-                        height: 6,
-                        decoration: BoxDecoration(
-                          color: isSelected ? Colors.greenAccent : Colors.transparent,
-                          shape: BoxShape.circle,
+                      ]
+                          : [],
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AnimatedScale(
+                          scale: isSelected ? 1.15 : 1.0,
+                          duration: const Duration(milliseconds: 200),
+                          child: Image.asset(
+                            icons[index],
+                            height: 28,
+                            width: 28,
+                            color: isSelected ? Colors.greenAccent : Colors.white70,
+                          ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(height: 4),
+                        AnimatedContainer(
+                          duration: const Duration(milliseconds: 200),
+                          width: isSelected ? 6 : 0,
+                          height: 6,
+                          decoration: BoxDecoration(
+                            color: isSelected ? Colors.greenAccent : Colors.transparent,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               );

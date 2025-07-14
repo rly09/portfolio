@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../utils/section_header.dart';
 
 class MainContent extends StatelessWidget {
@@ -23,8 +24,8 @@ class MainContent extends StatelessWidget {
           // Intro Text
           Text(
             "Hello There, I'm",
-            style: TextStyle(
-              fontSize: isMobile ? 26 : 50,
+            style: GoogleFonts.inter(
+              fontSize: isMobile ? 26 : 40,
               color: Colors.white70,
               fontWeight: FontWeight.w500,
             ),
@@ -37,16 +38,16 @@ class MainContent extends StatelessWidget {
               children: [
                 TextSpan(
                   text: 'Roshan, ',
-                  style: TextStyle(
-                    fontSize: isMobile ? 34 : 68,
+                  style: GoogleFonts.exo2(
+                    fontSize: isMobile ? 34 : 64,
                     fontWeight: FontWeight.bold,
-                    color: const Color(0xFF00FF9F),
+                    color: const Color(0xFF00FFC6),
                   ),
                 ),
                 TextSpan(
                   text: 'App Developer and\nFlutter Developer',
-                  style: TextStyle(
-                    fontSize: isMobile ? 28 : 60,
+                  style: GoogleFonts.exo2(
+                    fontSize: isMobile ? 28 : 56,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
@@ -60,7 +61,7 @@ class MainContent extends StatelessWidget {
           Text(
             "I create beautifully simple and intuitive mobile apps, blending clean design with purposeful code\n"
                 "to craft experiences that feel as good as they work.",
-            style: TextStyle(
+            style: GoogleFonts.inter(
               fontSize: isMobile ? 14 : 16,
               color: Colors.white60,
               height: 1.6,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../utils/section_header.dart';
 
 class EducationExperienceContent extends StatelessWidget {
@@ -27,7 +28,7 @@ class EducationExperienceContent extends StatelessWidget {
               // Heading
               RichText(
                 text: TextSpan(
-                  style: TextStyle(
+                  style: GoogleFonts.exo2(
                     fontSize: isMobile ? 30 : 60,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -36,11 +37,12 @@ class EducationExperienceContent extends StatelessWidget {
                     TextSpan(text: 'Education '),
                     TextSpan(
                       text: '& Experience',
-                      style: TextStyle(color: Color(0xFF00FF9F)),
+                      style: TextStyle(color: Color(0xFF00FFC6)), // Mint neon
                     ),
                   ],
                 ),
               ),
+
               const SizedBox(height: 40),
 
               // Timeline entries
@@ -168,11 +170,11 @@ class TimelineEntry extends StatelessWidget {
                 height: 14,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: isCurrent ? Colors.greenAccent : Colors.white,
+                  color: isCurrent ? const Color(0xFF00FFC6) : Colors.white,
                   boxShadow: isCurrent
                       ? [
                     BoxShadow(
-                      color: Colors.greenAccent.withOpacity(0.8),
+                      color: const Color(0xFF00FFC6).withOpacity(0.8),
                       blurRadius: 12,
                       spreadRadius: 2,
                     ),
@@ -196,7 +198,7 @@ class TimelineEntry extends StatelessWidget {
               children: [
                 Text(
                   year,
-                  style: const TextStyle(
+                  style: GoogleFonts.inter(
                     color: Colors.white60,
                     fontSize: 16,
                   ),
@@ -204,7 +206,7 @@ class TimelineEntry extends StatelessWidget {
                 const SizedBox(height: 8),
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: GoogleFonts.exo2(
                     color: Colors.white,
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
@@ -213,7 +215,7 @@ class TimelineEntry extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   school,
-                  style: const TextStyle(
+                  style: GoogleFonts.inter(
                     color: Colors.white70,
                     fontSize: 16,
                   ),

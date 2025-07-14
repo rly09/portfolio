@@ -14,37 +14,22 @@ class SkillPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFF121212),
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          final isMobileOrTablet = constraints.maxWidth < 1100;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isMobileOrTablet = screenWidth < 1100;
 
-          if (isMobileOrTablet) {
-            // 📱 Mobile / Tablet: No IntroCard, scrollable content
-            return SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-              child: const SkillsContent(isMobile: true),
-            );
-          }
-
-          // 💻 Desktop: Show IntroCard and layout side-by-side
-          return Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SizedBox(
-                width: 300,
-                child: IntroCards(onContactPressed: () => onTap(5)),
-              ),
-              const Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 40),
-                  child: SkillsContent(isMobile: false),
-                ),
-              ),
-            ],
-          );
-        },
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+      child: isMobileOrTablet
+          ? const SkillsContent(isMobile: true)
+          : Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(width: 40),
+          // Right: Skills Content
+          const Expanded(
+            child: SkillsContent(isMobile: false),
+          ),
+        ],
       ),
     );
   }

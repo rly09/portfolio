@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../utils/section_header.dart';
 
 class SkillsContent extends StatelessWidget {
   final bool isMobile;
 
-  const SkillsContent({super.key,required this.isMobile});
+  const SkillsContent({super.key, required this.isMobile});
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +25,10 @@ class SkillsContent extends StatelessWidget {
           ),
           const SizedBox(height: 16),
 
-          // Responsive Heading
+          // Heading
           RichText(
             text: TextSpan(
-              style: TextStyle(
+              style: GoogleFonts.exo2(
                 fontSize: headingFontSize,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
@@ -36,14 +37,15 @@ class SkillsContent extends StatelessWidget {
                 TextSpan(text: 'My '),
                 TextSpan(
                   text: 'Advantages',
-                  style: TextStyle(color: Color(0xFF00FF9F)),
+                  style: TextStyle(color: Color(0xFF00FFC6)),
                 ),
               ],
             ),
           ),
+
           const SizedBox(height: 40),
 
-          // Skill icons grid
+          // Grid
           Center(
             child: Wrap(
               spacing: spacing,
@@ -65,6 +67,7 @@ class SkillsContent extends StatelessWidget {
     );
   }
 }
+
 class SkillCircle extends StatelessWidget {
   final String iconPath;
   final String label;
@@ -89,6 +92,14 @@ class SkillCircle extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.all(color: Colors.white24, width: 1.2),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFF00FFC6).withOpacity(0.3), // Neon glow
+                blurRadius: 10,
+                spreadRadius: 2,
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
           padding: const EdgeInsets.all(16),
           child: Image.asset(iconPath, fit: BoxFit.contain),
@@ -96,10 +107,11 @@ class SkillCircle extends StatelessWidget {
         const SizedBox(height: 12),
         Text(
           label.toUpperCase(),
-          style: TextStyle(
-            color: Colors.white70,
+          style: GoogleFonts.rajdhani(
+            color: Colors.white.withOpacity(0.85),
             fontSize: isMobile ? 12 : 14,
             fontWeight: FontWeight.w600,
+            letterSpacing: 1.2,
           ),
         ),
       ],

@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class IntroCards extends StatelessWidget {
@@ -65,7 +66,7 @@ class IntroCards extends StatelessWidget {
                     Text(
                       "Roshan Lal Yogi",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: GoogleFonts.exo2(
                         fontSize: titleSize,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -74,7 +75,7 @@ class IntroCards extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(
                       "App Developer",
-                      style: TextStyle(
+                      style: GoogleFonts.inter(
                         fontSize: subtitleSize,
                         color: Colors.white70,
                       ),
@@ -103,7 +104,7 @@ class IntroCards extends StatelessWidget {
                             "assets/icons/linkedin.png",
                             height: 28,
                             width: 28,
-                            color: Colors.greenAccent,
+                              color: const Color(0xFF00FFC6),
                           ),
                         ),
                         GestureDetector(
@@ -112,7 +113,7 @@ class IntroCards extends StatelessWidget {
                             "assets/icons/github.png",
                             height: 28,
                             width: 28,
-                            color: Colors.greenAccent,
+                            color: const Color(0xFF00FFC6),
                           ),
                         ),
                       ],
@@ -123,19 +124,19 @@ class IntroCards extends StatelessWidget {
                     // Contact Info
                     Text(
                       "yogiroshan2005@gmail.com",
-                      style: TextStyle(
+                      style: GoogleFonts.inter(
                         color: Colors.white70,
                         fontSize: isMobile ? 12 : 14,
                       ),
                     ),
-                    const SizedBox(height: 6),
                     Text(
                       "Rajasthan, India",
-                      style: TextStyle(
+                      style: GoogleFonts.inter(
                         color: Colors.white60,
                         fontSize: isMobile ? 12 : 14,
                       ),
                     ),
+
                     const SizedBox(height: 20),
 
                     // Contact Me Button
@@ -143,7 +144,7 @@ class IntroCards extends StatelessWidget {
                       width: double.infinity,
                       child: ElevatedButton.icon(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.greenAccent,
+                          backgroundColor: const Color(0xFF00FFC6),
                           foregroundColor: Colors.black,
                           minimumSize: const Size(100, 50),
                           shape: RoundedRectangleBorder(
@@ -167,21 +168,24 @@ class IntroCards extends StatelessWidget {
                       child: ElevatedButton.icon(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.white10,
-                          foregroundColor: Colors.greenAccent,
+                          foregroundColor: const Color(0xFF00FFC6),
                           minimumSize: const Size(100, 50),
-                          side: const BorderSide(color: Colors.greenAccent),
+                          side: const BorderSide(color: Color(0xFF00FFC6)),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
                         onPressed: () => _launchURL(resumeUrl),
                         icon: const Icon(Icons.download, size: 20, color: Colors.greenAccent),
-                        label: const Text(
+                        label: Text(
                           "Resume",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
+                          style: GoogleFonts.exo2(
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF00FFC6),
+                          )
                       ),
                     ),
+                    )
                   ],
                 ),
               ),
