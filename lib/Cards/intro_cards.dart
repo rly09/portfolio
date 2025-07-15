@@ -15,7 +15,7 @@ class IntroCards extends StatelessWidget {
       "https://www.linkedin.com/in/roshan-lal-yogi-495569316/";
   final String githubUrl = "https://github.com/rly09";
   final String resumeUrl =
-      "https://drive.google.com/uc?export=download&id=1-qfIvV6U46vyYQGNaTfGNgvH2hN4m8cC";
+      "https://drive.google.com/uc?export=download&id=11xnQOAIaO2UsldqE2tR0PJKAoEF1DY-w";
 
   Future<void> _launchURL(String url) async {
     final Uri uri = Uri.parse(url);
