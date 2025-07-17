@@ -58,6 +58,12 @@ class ProjectsContent extends StatelessWidget {
                 projectUrl: 'https://pdf-brain.vercel.app/',
               ),
               ProjectCard(
+                imagePath: 'assets/icons/courtkings.png',
+                title: 'CourtKings',
+                tags: ['Flutter'],
+                projectUrl: 'https://court-kings-snowy.vercel.app/',
+              ),
+              ProjectCard(
                 imagePath: 'assets/icons/tictactoe.png',
                 title: 'Tic Tac Toe',
                 tags: ['Flutter'],
